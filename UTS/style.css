@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.login-container {
+    width: 350px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2 {
+    background-color: #000000;
+    color: white;
+    padding: 15px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px 0;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color:#000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Form Cek Harga */
+.cek-harga {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.cek-harga h3 {
+    margin-top: 0;
+}
+
+.cek-harga form {
+    display: grid;
+    gap: 10px;
+}
+
+.cek-harga label {
+    font-weight: bold;
+}
+
+.cek-harga input,
+.cek-harga select,
+.cek-harga button {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.cek-harga button {
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+/* Style for Navigation Menu */
+nav {
+    background-color: #000000;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+
+
