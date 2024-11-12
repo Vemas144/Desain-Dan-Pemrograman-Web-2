@@ -33,13 +33,16 @@ function hitungHarga($berat, $jenis, $kecepatan, $diskon) {
     }
 
     // Diskon berdasarkan tipe diskon
+    $totalDiskon = 0;
     if ($diskon === "Member") {
-        $totalHarga -= $totalHarga * 0.10;
+        $totalDiskon = $totalHarga * 0.10;
+        $totalHarga -= $totalDiskon;
     } elseif ($diskon === "Kupon" && $berat >= 2) {
-        $totalHarga -= 2 * $hargaPerKilo; // Gratis 2 kg
+        $totalDiskon= 2 * $hargaPerKilo; // Gratis 2 kg
+        $totalHarga -= $totalDiskon;
     }
 
-    return $totalHarga;
+    return [$totalHarga, $totalDiskon];
 }
 
 // Proses jika form di-submit
@@ -49,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kecepatan = $_POST['kecepatan'];
     $diskon = $_POST['diskon'];
 
-    $hargaTotal = hitungHarga($berat, $jenis, $kecepatan, $diskon);
+    list($hargaTotal, $totalDiskon) = hitungHarga($berat, $jenis, $kecepatan, $diskon);
 }
 ?>
 
@@ -100,8 +103,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit">CHECK</button>
             </form>
 
-            <?php if (isset($hargaTotal)): ?>
+            <?php if (isset($hargaTotal)&& isset($totalDiskon)): ?>
                 <p>Total Harga: Rp <?= number_format($hargaTotal, 0, ',', '.'); ?></p>
+                <p>Total Diskon: Rp <?= number_format($totalDiskon, 0, ',', '.'); ?></p>
             <?php endif; ?>
         </section>
     </div>
